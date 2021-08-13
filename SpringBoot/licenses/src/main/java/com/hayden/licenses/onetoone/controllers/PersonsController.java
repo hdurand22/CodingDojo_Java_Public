@@ -71,7 +71,11 @@ public class PersonsController {
 			return "/licenses/newlicense.jsp";
 		}
 		else {
-			licenseService.createLicense(license);
+			License newLicense = licenseService.createLicense(license);
+			Long id = newLicense.getId();
+			String licenseNumber = String.format("%06d", id);
+			newLicense.setNumber(licenseNumber);
+			licenseService.updateLicense(newLicense);
 			return "redirect:/persons/new";
 		}
 	}

@@ -2,6 +2,7 @@ package com.hayden.licenses.onetoone.models;
 
 import java.util.Date;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -37,6 +38,12 @@ public class License {
  
  public License() {
      
+ }
+ 
+ public License(Date expirationDate, String state) {
+	 this.expirationDate = expirationDate;
+	 this.state = state;
+	 
  }
 
 public Long getId() {

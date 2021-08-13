@@ -34,4 +34,9 @@ public class LicenseService {
 			return null;
 		}
 	}
+	
+	// Update
+	public License updateLicense(License l) {
+		return licenseRepository.save(l);
+	}
 }
